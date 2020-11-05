@@ -1,0 +1,108 @@
+.container_journey {
+  width: 100%;
+  background: rgba(247, 248, 250, 1);
+}
+
+.card_top {
+  width: 632rpx;
+  height: 376rpx;
+  padding-left: 88rpx;
+  padding-top: 48rpx;
+  background: url("https://images.allcitygo.com/image/cycleCard/bg_journey_card_tao.png?x-oss-process=image/resize,m_fill,h_424,w_720/format,webp ");
+  background-size: 100%;
+}
+.card_top_more {
+  width: 100%;
+  height: 376rpx;
+  
+  padding-top: 48rpx;
+  background: url("https://images.allcitygo.com/image/cycleCard/bg_journey_card_tao_more.png?x-oss-process=image/resize,m_fill,h_424,w_750/format,webp ");
+  background-size: 100% 100%;
+}
+
+.journey_card_tab {
+  width: 100%;
+  height: 114rpx;
+  background: rgba(254, 255, 254, 1);
+  text-align: center;
+  position: relative;
+}
+
+.journey_tab_text {
+  position: relative;
+  width: 375rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 114rpx;
+  text-align: center;
+}
+
+.line_journey {
+  width: 1rpx;
+  height: 30rpx;
+  background: rgba(216, 216, 216, 1);
+  left: 374.5rpx;
+  position: absolute;
+  top: 38rpx;
+}
+
+.line_journey_bg {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  left: 0rpx;
+  height: 114rpx;
+  width: 100%;
+}
+
+.lose_effect {
+  position: absolute;
+  width: 12rpx;
+  height: 12rpx;
+  background: rgba(255, 83, 71, 1);
+  border-radius: 7rpx;
+  border: 2rpx solid rgba(255, 255, 255, 1);
+  top: 34rpx;
+  left: 266rpx;
+}
+
+.btn_buy_journey_card {
+  width: 622rpx;
+  height: 112rpx;
+  background: linear-gradient(137deg, rgba(1, 173, 254, 1) 0%, rgba(13, 104, 254, 1) 100%);
+  border-radius: 16rpx;
+  font-size: 40rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 112rpx;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buy_journey_card_desc {
+  width: fit-content;
+  width: -webkit-fit-content;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(179, 186, 197, 1);
+  line-height: 33rpx;
+  margin-top: 32rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+.scroll-view_H {
+  width: 100%;
+  white-space: nowrap;
+  padding-left: 64rpx;
+  padding-right: 32rpx;
+  box-sizing: border-box;
+  /* display: inline-block; */
+}
+.scroll-view_item {
+  padding-right: 32rpx;
+}

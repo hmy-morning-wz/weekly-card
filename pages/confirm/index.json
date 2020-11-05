@@ -1,0 +1,10 @@
+{
+  "defaultTitle": "订单确认",
+  "transparentTitle": "none",
+  "titlePenetrate": "YES",
+  "barButtonTheme": "default",
+  "backgroundColor": "#F5F5F5",  
+  "usingComponents": { 
+  
+    }
+}

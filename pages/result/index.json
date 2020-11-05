@@ -1,0 +1,8 @@
+{
+  "defaultTitle": "结果",
+  "transparentTitle": "none",
+  "titlePenetrate": "YES",
+  "barButtonTheme": "default",
+  "backgroundColor": "#ffffff",
+  "usingComponents": {  }
+}

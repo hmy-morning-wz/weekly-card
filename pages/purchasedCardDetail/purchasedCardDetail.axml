@@ -1,0 +1,72 @@
+<view class="container container_journey_detail"  >
+  <view class="toTakeBus" onTap="toTakeBus">
+    去乘车
+    <image mode="scaleToFill" src="https://images.allcitygo.com/20200918171856362pzOxmU.png"/>
+  </view>
+  <scroll-view style="height:{{scrollHeight}}" scroll-y="{{true}}" lower-threshold=10 onScroll="scroll" onScrollToUpper="onScrollToUpper" onScrollToLower="lower">
+    <view class="purchased_detail_top_bg" style="background-color: {{card && card.mainHueValue || '#FFFFFF'}}">
+      <view class="bgMask"></view> 
+      <view style="padding-top:32rpx;padding-left:79rpx;" a:if="{{card}}">
+        <journey-card  item="{{card}}" ref="saveJourneyRef" ></journey-card>
+      </view>
+    </view>
+    <image class="center_bg" mode="scaleToFill" src="../../images/bg_purchased_card_center.png"/>
+    <view class="record_bg" a:if="{{card && card.effect!=undefined && card.effect!=0}}">
+      <view  class="flex preferential" onTap="preferentialHandle" data-group="出行权益-累计优惠" data-seed="出行权益-累计优惠-权益卡使用说明">
+        <image style="height:32rpx;width:32rpx;margin-left:5rpx;" mode="scaleToFill" src="../../images/money.png"/>
+        <view class="text flex">已优惠{{benefitNum}}次，累计优惠
+          <view style="margin-left: 12rpx;margin-right: 12rpx;">
+            <view class="count">{{allBenefitAmount}}</view>
+           </view>
+        </view>
+      </view>
+      <view class="record_desc">注：刷码乘车扣费有延时，扣费成功后体现</view>
+      <view>
+        <view class="drive_record_list" a:for="{{recordList}}" onTap="onGoAlipayRecord" data-obj="{{item}}"  data-seed="跳转支付宝乘车记录" data-group="已购卡详情">
+          <view class="title">{{item.cityName}}</view>
+          <view class="station" a:if="{{item.entryStationName}}">
+            {{item.entryStationName}}-{{item.exitStationName}}
+          </view>
+          <view class="time">时间：{{item.bizTime}}</view>
+          <view class="preferentialmoney">优惠：{{item.benefitAmount}}元</view>
+          <view class="trueMoney">实付：¥ {{item.realAmount}}</view>
+          <view class="costPrice">原价：¥ {{item.bizOrderAmount}}</view>
+          <text a:if="{{(item.realAmount>0)&&(card&&card.cityType===1)}}" class="overTime">
+            超时\n补缴
+          </text>
+        </view>
+      </view>
+    </view>
+    <view a:if="{{showStep}}" class="step_bg">
+      <image style="height:104rpx;width:590rpx;margin:auto;" mode="scaleToFill" src="../../images/step_bg.png"/>
+      <view  a:if="{{config.useNoticeTitle &&  config.useNoticeUrl}}"  class="flex card_use_introduce" onTap="useIntroduceHandle" data-group="出行权益-已购买卡详情" data-seed="出行权益-已购买卡详情-权益卡使用说明">
+        <view class="text">{{config.useNoticeTitle || '权益卡使用说明'}}</view>
+        <image style="height:24rpx;width:24rpx;margin-left:5rpx;" mode="scaleToFill" src="../../images/icon_question.png"/>
+      </view>
+    </view>
+      <view  a:else class="step_bg_0"></view>
+    <view class="assess_bottom_0"></view>
+  </scroll-view>
+  <view class="assess_bottom">
+    <view class="{{canAssess && card.evaluate==0 ? 'btn_assess_true':'btn_assess'}}" onTap="assessHandle" data-group="出行权益-评价" data-seed="出行权益-点击评价">{{ card&&card.evaluate==1?'查看评价':'评价' }} </view>
+  </view>
+  <popup show="{{showBottom}}" position="bottom" onClose="assessCloseHandle" zIndex="32">
+    <view class="pop_bg">
+      <view class="use_assess">使用评价</view>
+      <view class="assess_close" onTap="assessCloseHandle" data-group="出行权益-使用评价pop" data-seed="出行权益-使用评价pop-关闭"></view>
+      <view class="satisfaction_text">使用满意度</view>
+      <view class="flex">
+        <view a:for="{{starList}}" onTap="satisfactionHandle" data-obj="{{item}}" data-group="出行权益-使用评价pop" data-seed="出行权益-使用评价pop-满意度点击-{{index}}" data-index="{{index}}" class="{{item.hasChosed ? 'star_item_active':'star_item_inactive'}} "></view>
+      </view>
+      <view class="satisfaction_text">使用意见和建议</view>
+      <form onSubmit="bindFormSubmit">
+        <view class="bg_textarea">
+          <textarea name="textarea" onBlur="onBlurTextarea" value="{{suggest}}" class="textarea" placeholder="为您提供更优质的服务，是我们的不懈追求！" maxlength="500" disabled="{{card.evaluate!=0}}" ></textarea>
+        </view>
+        
+          <button class="commit_assess" form-type="submit" size="mini" type="primary"> {{card.evaluate==0?'提交评价':'关闭'}}</button>
+          
+      </form>
+    </view>
+  </popup>
+</view>

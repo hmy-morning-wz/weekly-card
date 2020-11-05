@@ -1,0 +1,10 @@
+{
+  "defaultTitle": "行程详情",
+  "transparentTitle": "none",
+  "titlePenetrate": "YES",
+  "barButtonTheme": "default",
+  "backgroundColor": "#F5F5F5",  
+  "usingComponents": { 
+  
+  }
+}

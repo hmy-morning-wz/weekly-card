@@ -1,0 +1,11 @@
+{
+  "defaultTitle": "出行权益卡",
+  "transparentTitle": "auto",
+  "titlePenetrate": "YES",
+  "barButtonTheme": "light",
+  "backgroundColor": "#F5F5F5",
+  "titleBarColor": "#027ffd",
+  "usingComponents": { 
+    "am-checkbox": "mini-antui/es/am-checkbox/index" 
+    }
+}

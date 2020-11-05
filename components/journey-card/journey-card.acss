@@ -1,0 +1,84 @@
+.bg_card {
+  width: 593rpx;
+  height: 300rpx;
+  position: relative;
+  background: rgba(122, 134, 154, 1);
+  border-radius: 8rpx;
+  padding-top: 32rpx;
+  z-index: 3;
+}
+.colorMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 593rpx;
+  height: 332rpx;
+  border-radius:8rpx;
+  z-index: 10;
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+}
+.textMask {
+  z-index: 11;
+  text-shadow:0 6rpx 24rpx rgba(0,0,0,0.11), 0rpx 2rpx 4rpx rgba(0,0,0,0.39);
+}
+
+.journey_card_title {
+  position: relative;
+  height: 40rpx;
+  font-size: 40rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  line-height: 40rpx;
+  margin-left: 32rpx;
+  z-index: 11;
+  text-shadow:0 6rpx 24rpx rgba(0,0,0,0.11), 0rpx 2rpx 4rpx rgba(0,0,0,0.39);
+}
+
+.journey_card_title_desc {
+  position: relative;
+  height: 24rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 24rpx;
+  margin-left: 32rpx;
+  margin-top: 16rpx;
+  z-index: 11;
+  text-shadow:0 6rpx 24rpx rgba(0,0,0,0.11), 0rpx 2rpx 4rpx rgba(0,0,0,0.39);
+}
+
+.journey_card_time {
+  width: fit-content;
+  width: -webkit-fit-content;
+  height: 24rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  line-height: 24rpx;
+  position: absolute;
+  top: 240rpx;
+  right: 24rpx;
+  z-index: 11;
+  text-shadow:0 6rpx 24rpx rgba(0,0,0,0.11), 0rpx 2rpx 4rpx rgba(0,0,0,0.39);
+}
+
+.journey_card_desc_bottom {
+  width: fit-content;
+  width: -webkit-fit-content;
+  height: 20rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 20rpx;
+  position: absolute;
+  top: 280rpx;
+  right: 32rpx;
+  z-index: 11;
+  text-shadow:0 6rpx 24rpx rgba(0,0,0,0.11), 0rpx 2rpx 4rpx rgba(0,0,0,0.39);
+}
+

@@ -1,0 +1,47 @@
+<view class="page-bg">
+  <view class="card-bg" style="background-color: {{card.mainHueValue || '#FFFFFF'}}">
+   <view class="bgMask"></view> 
+  </view>
+  <view class="card-box" onTap="onCardApp"  data-seed="未购卡面-卡面-跳转小程序" data-group="未购卡详情-卡面">
+     <view class="colorMask" style="background-color: {{card.mainHueValue || '#FFFFFF'}}"></view> 
+     <image  mode="scaleToFill" a:if="{{card.image}}" src="{{card.image}}"></image>
+     <view class="text1">{{card.name}}</view>
+     <view class="text2" a:if="{{card.detail}}">支持  {{card.detail}}</view>     
+  </view>
+  <view class="rect-bg">
+
+  </view>
+
+  <view class="box">
+      <view class="text1">{{card.cardDetailsGuide}}</view>
+      <view class="item" a:for="{{card.sellInfo}}">
+         <view class="{{item.image?'image':'no-image'}} ">
+         <image  mode="scaleToFill" a:if="{{item.image}}" src="{{item.image}}"></image>
+        </view>
+         <view class="text1">{{item.name}}</view>
+          <view class="text2">{{item.text}}</view>
+      </view>
+
+          
+      <view class="bottom"> </view>
+         <view class="box1"> 
+      <form onSubmit="onSubmit" onReset="onReset">
+        <am-checkbox onChange="onCkChange" value="checkbox" checked="{{checked}}" ></am-checkbox>  
+       <view class="item1">          
+        <text class="text1">已知晓并同意</text>
+        <text class="text2"  data-seed="购买协议-查看协议1" data-index="0" data-group="购买协议"  onTap="onGoPage1" a:if="{{card.saleNoticeTitle && card.saleNoticeUrl}}">{{card.saleNoticeTitle}}</text>
+        <text class="text2"  data-seed="购买协议-查看协议2" data-index="1" onTap="onGoPage2" a:if="{{card.generalSaleNoticeTitle && card.generalSaleNoticeUrl}}">{{card.generalSaleNoticeTitle}}</text>
+       </view>
+       <button class="{{card.saleable?'item2':'item3'}}" hover-class="none" form-type="submit">
+        <view >         
+        <text class="text1">{{card.salePrice}}</text>
+        <text class="text2">{{card.saleButtonText||'立即抢购'}}</text>
+       </view>
+       </button>
+       </form>
+    </view>
+  </view>
+    
+
+
+</view>

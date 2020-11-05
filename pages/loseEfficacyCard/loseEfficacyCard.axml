@@ -1,0 +1,9 @@
+<view class="container lose_history_container">
+<block a:if="{{loseList && loseList.length}}">
+  <view a:for="{{loseList}}" class="lose_history_item flex" data-obj="{{item}}" data-index="{{index}}" data-group="已失效权益卡" onTap="purchasedCardHandle">
+    <view catchTap="onEvaluate" data-obj="{{item}}" data-index="{{index}}" data-group="已失效权益卡-查看评价" class="{{item.hasEvaluate ? 'hasEvaluate':'hasNotEvaluate'}}">{{item.hasEvaluate ? '已评价':'未评价'}}</view>
+    <journey-card  item="{{item}}" ></journey-card>
+  </view>
+  </block>
+  <view a:else class="none-box" > {{noneText}} </view>
+</view>

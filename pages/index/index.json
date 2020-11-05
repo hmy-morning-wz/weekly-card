@@ -1,0 +1,12 @@
+{
+  "defaultTitle":"众城通-出行权益卡",
+  "transparentTitle":"auto",
+  "titlePenetrate": "YES",
+  "barButtonTheme": "light",
+  "backgroundColor": "#F5F5F5",
+  "titleBarColor": "#c1eefb",
+  "usingComponents": {       
+    "tk-lifestyle":"/components/tk-lifestyle/tk-lifestyle"
+  }
+  
+}

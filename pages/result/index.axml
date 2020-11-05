@@ -1,0 +1,20 @@
+<view class="page-bg">
+<view class="box {{result}}">
+   <view class="top" >     </view>
+    <view class="image"/>
+  <view class="message">
+    <text class="text1">{{msg1}}</text>
+    <text>:</text>
+    <text class="text2">{{msg2}}</text>
+  </view>
+ </view>
+ <form onSubmit="onSubmit" onReset="onReset">
+     <button class="item2" hover-class="none" form-type="submit">
+        <view >         
+     
+        <text class="text1">{{buttonText}}</text>
+       </view>
+       </button>
+ </form>
+
+</view>

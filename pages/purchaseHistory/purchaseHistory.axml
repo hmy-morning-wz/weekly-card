@@ -1,0 +1,24 @@
+<view class="container purchase_history_container">
+  <view a:for="{{historyList}}" onTap="onItemTap"  data-obj="{{item}}"    data-group="购买记录" data-index="{{index}}"   class="history_item flex  {{(item.showReturn||(item.orderStatus===2 &&item.effect==0))?'itemH':'itemL'}}">
+    <view class="content_left">
+      <view class="card_title">{{item.productName}}</view>
+      <view class="order_id">订单流水号：{{item.orderNo}}</view>
+      <view class="order_time">下单时间：{{item.orderTime}}</view>
+    </view>
+    <view class="content_right">
+      <view class="buy_result"> {{item.orderStatusText}}</view>
+      <view class="money" a:if="{{item.orderStatus===1 || item.orderStatus===2}}" >¥ {{item.needPayPrice}}</view>
+    </view>
+  <view  class="content_bottom"  a:if="{{item.showReturn || (item.orderStatus===2 &&item.effect==0)}}">
+      <view class="return_box" a:if="{{item.returnText}}"  >
+        <text  class="return_money"  catchTap="returnMoney" data-obj="{{item}}"   data-seed="购买记录-退卡" data-group="购买记录" data-index="{{index}}" > {{item.returnText}}</text> 
+       </view>
+      <view class="return_box" a:if="{{item.orderStatus===1}}"  >  <text  class="return_money"  catchTap="returnMoney"  data-seed="购买记录-取消订单"   data-group="购买记录" data-index="{{index}}" data-obj="{{item}}" > 取消</text> <text  class="pay_money"   catchTap="goPay"  data-seed="购买记录-去支付"  data-group="购买记录" data-index="{{index}}" data-obj="{{item}}"> 去支付</text></view>
+  </view>
+
+  </view>
+  <view class="purchase_history_question">- {{config.page_kefu}} -</view>
+  <view a:if="{{configLoad}}">
+    <tk-lifestyle publicId="{{publicId}}" hideLife="{{config.purchaseRecordDisplay===0}}"></tk-lifestyle>
+  </view>
+</view>

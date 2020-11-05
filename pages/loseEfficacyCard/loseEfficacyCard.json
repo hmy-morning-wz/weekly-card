@@ -1,0 +1,7 @@
+{
+    "barButtonTheme": "default",
+  "usingComponents": {       
+   "journey-card":"/components/journey-card/journey-card"
+  },
+  "defaultTitle": "已失效权益卡"
+}

@@ -1,0 +1,82 @@
+<view class="outer">
+  <view class="top_part">    
+    <image class="icon_success" mode="scaleToFill" src="../../images/icon_success.png"/>
+    <view class="mian_info" a:if="{{(recordDetail.realAmount>0)&&(cityType===1)}}">补缴成功</view>
+    <view class="mian_info" a:else>支付成功</view>
+    <view class="sub_info"><text a:if="{{(recordDetail.realAmount>0)&&(cityType===1)}}">您在车站内逗留时间超过路网设定时间，需补缴最高票价</text></view>
+  </view>
+  <view class="bottom_part">
+    <view class="each_line" a:if="{{recordDetail.entryStationName}}">
+      <view class="left">
+        起始站
+      </view>
+      <view class="right">
+        {{recordDetail.entryStationName}}
+      </view>
+    </view>
+    <view class="each_line" a:if="{{recordDetail.exitStationName}}">
+      <view class="left">
+        终点站
+      </view>
+      <view class="right">
+        {{recordDetail.exitStationName}}
+      </view>
+    </view>
+    <view class="each_line">
+      <view class="left">
+        支付金额
+      </view>
+      <view class="right">
+        ￥{{recordDetail.bizOrderAmount}}
+      </view>
+    </view>
+    <view class="each_line">
+      <view class="left">
+        优惠券抵扣
+      </view>
+      <view class="right">
+        ￥{{recordDetail.benefitAmount}}
+      </view>
+    </view>
+    <view class="each_line">
+      <view class="left">
+        实付金额
+      </view>
+      <view class="right">
+        ￥{{recordDetail.realAmount}}
+      </view>
+    </view>
+    <view class="each_line" a:if="{{recordDetail.transId}}">
+      <view class="left">
+        订单编号
+      </view>
+      <view class="right">
+        {{recordDetail.transId}}
+      </view>
+    </view>
+    <view class="each_line" a:if="{{recordDetail.entryTime}}">
+      <view class="left">
+        进站时间
+      </view>
+      <view class="right">
+        {{recordDetail.entryTime}}
+      </view>
+    </view>
+    <view class="each_line" a:if="{{recordDetail.exitTime}}">
+      <view class="left">
+        出站时间
+      </view>
+      <view class="right">
+        {{recordDetail.exitTime}}
+      </view>
+    </view>
+    <view class="each_line" a:if="{{recordDetail.bizTime}}">
+      <view class="left">
+        交易时间
+      </view>
+      <view class="right">
+        {{recordDetail.bizTime}}
+      </view>
+    </view>
+  </view>
+</view>

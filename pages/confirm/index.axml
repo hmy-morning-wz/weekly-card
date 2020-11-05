@@ -1,0 +1,86 @@
+<view class="page-bg">
+   <view class="card-bg">
+      <view class="card-box" onTap="onCardApp" data-seed="确认购买-卡面-跳转小程序" data-group="确认购买卡面">
+         <view class="colorMask" style="background-color: {{card.mainHueValue || '#FFFFFF'}}"></view> 
+         <image mode="scaleToFill" a:if="{{card.image}}" src="{{card.image}}"/>
+         <view class="text1"> {{card.name}}</view>
+         <view class="text2" a:if="{{card.detail}}">支持  {{card.detail}}</view>
+         <view class="text3" a:if="{{tip1}}"> {{tip1}}</view>
+         <view class="text4"> {{card.tip2}}</view>
+      </view>
+   </view>
+   <view class="date-box">
+      <view class="title">
+         <text> 选择生效时间</text></view>
+      <!--<scroll-view class="scroll-view_H" scroll-x="{{true}}" style="width: 750rpx"><view class="scroll-view-item " a:for="{{dateList}}" data-index="{{index}}" data-group="选择生效日期" data-obj="{{item}}" onTap="onSelected"><view class="box  {{selectIndex===index?'selected':'notselected'}} "><view class="text1">{{item.week}}</view><view class="text2">{{item.monthDay}}</view></view></view><view class="right-box"></view></scroll-view> -->
+      <view class="flex" style="margin-top:40rpx;">
+         <view class={{timeChoseLeft ? 'date-left':'date-left-unchose'}} onTap="handleLeft">
+            <view class={{timeChoseLeft ? "date-left-title":"date-left-title-unchose"}}>
+           即刻生效
+            </view>
+            <view class={{timeChoseLeft ? "date-time-chose":"date-right-time-unchose"}}>
+           {{dateTime}}
+            </view>
+         </view>
+         <view class={{timeChoseLeft ? 'date-right-unchose':'date-right'}} onTap="handleRight">
+            <view class={{timeChoseLeft ? 'date-right-title-unchose':'date-left-title'}} >
+           定时生效
+            </view>
+            <view class={{timeChoseLeft ?'date-right-time-unchose': 'date-time-chose'}} >
+           {{rightDateTime}}
+            </view>
+         </view>
+      </view>
+   </view>
+   <view class="tip-box">
+      <view class="title">
+         <image mode="scaleToFill" src="/images/confirm/tips.png"/>
+         <text> 小提示</text></view>
+      <view class="item" a:for="{{card.tips}}">{{item.text}}</view>
+      <view class="bottom"></view>
+   </view>
+   <view class="pay-box">
+      <view class="msg-box">
+         <text class="text1"> 价格：</text>
+         <text class="text2"> {{card.salePrice}}</text>
+         <text class="text3"> {{card.price}}</text>
+      </view>
+      <form  report-submit onSubmit="onPay">
+         <button class="{{false?'disable-button':'button'}}" hover-class="none" form-type="submit">            确认购买
+         </button>
+      </form>
+      <!-- <view class="{{false?'disable-button':'button'}}" onTap="onPay">  确认购买</view> -->
+   </view>
+   <view a:if="{{showPickView}}" class="page-section">
+      <view >
+         <view class="section-complete" onTap="handleComplete">
+         完成
+         </view>
+      </view>
+      <view class="flex" a:if="{{effectiveTimePrecision === 2 || effectiveTimePrecision === 3}}">
+         <picker-view style="width:56%;" value="{{value}}" onChange="onPickViewChange" class="my-picker">
+            <picker-view-column >
+               <view  a:for="{{dates}}">{{item}}</view>
+            </picker-view-column>
+          </picker-view>
+         <picker-view style="width:22%;" value="{{value}}" onChange="onPickViewChange2" class="my-picker">
+            <picker-view-column>
+               <view a:for="{{hours}}">{{item}}</view>
+            </picker-view-column>
+         </picker-view>
+         <picker-view style="width:22%;" value="{{value}}" onChange="onPickViewChange3" class="my-picker">
+            <picker-view-column>
+               <view a:for="{{minutes}}">{{item}}</view>
+            </picker-view-column>
+            
+         </picker-view>
+      </view>
+      <view a:else>
+         <picker-view value="{{value}}" onChange="onPickViewChange" class="my-picker">
+            <picker-view-column>
+               <view a:for="{{dates}}">{{item}}</view>
+            </picker-view-column>
+         </picker-view>
+      </view>
+   </view>
+</view>

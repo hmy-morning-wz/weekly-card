@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "beforeCompile": "npm run updateVersion"
+  },
+  "component2": true
+}

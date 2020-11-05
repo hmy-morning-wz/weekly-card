@@ -1,0 +1,8 @@
+{
+    "barButtonTheme": "default",
+  "usingComponents": {       
+    "journey-card":"/components/journey-card/journey-card",
+    "tk-lifestyle":"/components/tk-lifestyle/tk-lifestyle"
+  },
+  "defaultTitle": "我的出行权益卡"
+}

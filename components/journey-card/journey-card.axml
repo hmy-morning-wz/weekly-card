@@ -1,0 +1,13 @@
+<view class="bg_card" style="background-image: url('{{image}}'); background-size: 100% 100%;">  
+  <view class="colorMask" style="background-color: {{mainHueValue || '#FFFFFF'}}"></view> 
+  <!-- <view class="textMask"> -->
+    <view class="journey_card_title">{{productName}}</view>
+    <view class="journey_card_title_desc" a:if="{{saleNote}}">支持 {{saleNote}}</view>
+    <view class="journey_card_time"  a:if="{{effect==0}}">{{effectTime}} 生效</view>
+    <view class="journey_card_time"  a:elif="{{effect==1}}"> 已生效 剩余{{remainingDays}}日</view>
+      <view class="journey_card_time"  a:elif="{{effect==2}}">{{effectPeriod}}</view>
+    <view class="journey_card_desc_bottom" a:if="{{showTip==0}}">{{saleRule}}</view>
+    <view class="journey_card_desc_bottom" a:else>{{tip2}}</view>
+  <!-- </view> -->
+</view>
+

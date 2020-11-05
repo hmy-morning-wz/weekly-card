@@ -1,0 +1,99 @@
+page {
+  background-color: white;
+}
+.page-bg {
+  background: white;
+
+}
+.box {
+   background: white;
+   width: 750rpx;
+   text-align: center;
+}
+.box .top{
+   background: white;
+   width: 750rpx;
+   height: 100rpx;
+}
+
+.box .image {
+margin-top: 0rpx;
+margin-left: 323rpx;
+width: 104rpx;
+height: 104rpx;
+}
+
+
+.success .image {
+background: url('/images/result/success.png');
+background-repeat:no-repeat;
+background-size:104rpx 104rpx;
+}
+.fail .image {
+background: url('/images/result/fail.png');
+background-repeat:no-repeat;
+background-size:104rpx 104rpx;
+}
+
+.box .message {
+  margin-top: 38rpx;
+}
+
+.success  .message .text1 {
+height:45rpx;
+font-size:32rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(9,30,66,1);
+line-height:45rpx;
+}
+.success  .message .text2 {
+height:56rpx;
+margin-left: 16rpx;
+font-size:40rpx;
+font-family:PingFangSC-Medium,PingFang SC;
+font-weight:500;
+color:rgba(255,83,71,1);
+line-height:56rpx;
+}
+
+.fail  .message .text1 {
+height:45rpx;
+font-size:32rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(9,30,66,1);
+line-height:45rpx;
+}
+.fail  .message .text2 {
+height:45rpx;
+margin-left: 16rpx;
+font-size:32rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(9,30,66,1);
+line-height:45rpx;
+}
+
+
+ .item2{
+  margin-top: 220rpx;
+  margin-left: 64rpx;
+  height: 112rpx;
+  width:622rpx;
+  background:linear-gradient(137deg,rgba(1,173,254,1) 0%,rgba(13,104,254,1) 100%);
+  border-radius:16rpx;
+  text-align: center;
+}
+
+
+.item2 .text1{
+
+height:112rpx;
+font-size:40rpx;
+font-family:SFUDINMittelschrift;
+color:rgba(254,255,254,1);
+line-height:112rpx;
+letter-spacing:1rpx;
+}
+

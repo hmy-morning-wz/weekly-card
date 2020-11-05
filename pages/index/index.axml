@@ -1,0 +1,35 @@
+<view class="page-bg">
+  
+  <view class="index-bg">
+  <view class="top-box">
+  <view class="top-info"  a:if="{{config.useNoticeTitle &&  config.useNoticeUrl}}"   data-group="权益卡使用说明" onTap="onViewHelp"><view class="text"> {{config.useNoticeTitle || '权益卡使用说明'}}</view><image mode="scaleToFill" src="/images/index/question.png"/></view>
+  <view  a:else class="top-info-none">  </view>
+  </view>
+  
+  <view class="mid-box">
+      <view class="title" data-group="选购出行权益"  data-seed="查看我的出行权益卡" onTap="onMyCard">
+          <view class="bg"></view> 
+          <view class="text1">选购出行权益</view>
+          <view  class="text2" >我的出行权益卡 </view>
+          <image class="image-arrow" mode="scaleToFill" src="/images/index/arrow.png"/>
+   
+      </view>
+      <view a:if="{{cardList&&cardList.length}}" a:for="{{cardList}}" class="item" onAppear="onAppear"  onTap="onViewCard"  data-group="卡列表" data-index="{{index}}" data-obj="{{item}}">
+             <view class="image-bg"> <view class="colorMask" style="background-color: {{item.mainHueValue || '#FFFFFF'}}"></view> <image class="image"  a:if="{{item.image}}" lazy-load="true" mode="scaleToFill"  src="{{item.image}}"  ></image> </view>
+            <view class="text1">{{item.name}}</view>
+            <view class="text2" a:if="{{item.detail}}">支持  {{item.detail}}</view>
+            <view class="text3">{{item.salePrice}}</view>
+            <view class="text4">{{item.price}}</view>
+            <view class="text5">去查看</view>
+             <view class="line"></view> 
+      </view>
+         
+  </view>
+   <text class="bottom-text">- {{config.page_footer}} -</text>
+   <view  class="bottom" >  </view>
+  <image class="bg2" mode="scaleToFill" src="/images/index/bg2.png"/>
+  <view a:if="{{configLoad}}">
+    <tk-lifestyle publicId="{{publicId}}" hideLife="{{config.purchaseListDisplay===0}}"></tk-lifestyle>
+  </view>
+</view>
+</view>

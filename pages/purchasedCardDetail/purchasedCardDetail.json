@@ -1,0 +1,8 @@
+{
+    "barButtonTheme": "default",
+  "usingComponents": {       
+    "journey-card":"/components/journey-card/journey-card",
+    "popup": "mini-antui/es/popup/index"
+  },
+  "defaultTitle": "出行权益卡"
+}
